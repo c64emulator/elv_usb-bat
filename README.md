@@ -13,3 +13,5 @@ Other Ressources
  - LCDproc (Multi-platform LCD display driver): http://www.lcdproc.org/
  - similiar product: picoLCD 256x64 Sideshow for CD-Bay (http://www.mini-box.com/picoLCD)
  - ... (tbd)
+
+see more info at the wiki!
