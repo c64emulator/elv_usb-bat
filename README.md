@@ -1,7 +1,7 @@
 elv_usb-bat
 ===========
 
-All about the Bedien- und Anzeigeterminal from ELV.de (USB-BAT, order#92448)
+All about the Bedien- und Anzeigeterminal from ELV.de (USB-BAT, order# 92448)
 
 Other Repos:
  - https://github.com/Vindaomeo/elv_usb_bat: Python class to access the ELV USB-Bat Terminal
