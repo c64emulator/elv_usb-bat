@@ -37,7 +37,7 @@ case "$1" in
     CMD=${CMD}$2
     ;;
 *)
-    echo "usage: usblcd [clear | init | reset | lighton | lightoff | beepon | beepoff | text? ]"
+    echo "usage: usblcd [clear | init | reset | lighton | lightoff | beepon | beepoff | text# sometext ]"
     exit
     ;;
 esac
