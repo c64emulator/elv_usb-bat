@@ -1,4 +1,4 @@
 
-# Link for ELV USB-BAT
+# Add symLink for ELV USB-BAT
 KERNEL=="hidraw[0-9]*",ATTRS{idVendor}=="18ef",ATTRS{idProduct}=="e01a",  SYMLINK+="usb-bat",MODE="777"
 
