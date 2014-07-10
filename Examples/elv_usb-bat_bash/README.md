@@ -22,3 +22,6 @@
         /bin/echo -en '\x01\x02\xf3\x7f' | dd ibs=64 conv=sync of=/dev/usb-bat  
         # display on after keypress for 5 secs  
         /bin/echo -en '\x01\x02\xf2\x01' | dd ibs=64 conv=sync of=/dev/usb-bat  
+
+*  sending short text message to line 2 of diplay  
+         usblcd text2 '    hello world!    '  
