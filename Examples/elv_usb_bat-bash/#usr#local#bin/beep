@@ -1,0 +1,3 @@
+#!/bin/bash
+/bin/echo -en '\x01\x02\xf3\x20' | dd ibs=64 conv=sync of=/dev/usb-bat
+ 

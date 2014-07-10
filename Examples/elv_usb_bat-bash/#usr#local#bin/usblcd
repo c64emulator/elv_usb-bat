@@ -1,0 +1,51 @@
+case "$1" in
+'clear')
+    CMD='\x01\xd9'
+    ;;
+'init')
+    CMD='\x01\xdc'
+    ;;
+'reset')
+    CMD='\x01\xf8'
+    ;;
+'lighton')
+    CMD='\x02\xf1\x00'
+    ;;
+'lightoff')
+    CMD='\x02\xf2\x00'
+    ;;
+'beepon')
+    CMD='\x02\xf3\x00'
+    ;;
+'beepoff')
+    CMD='\x01\xf4'
+    ;;
+'text1')
+    CMD='\x18\xd8\x00\x00'
+    CMD=${CMD}$2
+    ;;
+'text2')
+    CMD='\x18\xd8\x10\x00'
+    CMD=${CMD}$2
+    ;;
+'text3')
+    CMD='\x18\xd8\x20\x00'
+    CMD=${CMD}$2
+    ;;
+'text4')
+    CMD='\x18\xd8\x30\x00'
+    CMD=${CMD}$2
+    ;;
+*)
+    echo "usage: usblcd [clear | init | reset | lighton | lightoff | beepon | beepoff | text? ]"
+    exit
+    ;;
+esac
+
+## debug version
+#/bin/echo -en "\x01${CMD}" | dd ibs=64 conv=sync of=paddedFile.bin
+#hexdump -C paddedFile.bin
+#cat /dev/usb-bat | hexdump -C
+
+/bin/echo -en "\x01${CMD}" | dd ibs=64 conv=sync of=/dev/usb-bat
+
