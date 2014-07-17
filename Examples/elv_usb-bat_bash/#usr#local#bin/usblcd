@@ -1,3 +1,5 @@
+#!/bin/bash
+
 case "$1" in
 'clear')
     CMD='\x01\xd9'
@@ -13,6 +15,9 @@ case "$1" in
     ;;
 'lightoff')
     CMD='\x02\xf2\x00'
+    ;;
+'beep')
+    CMD='\x02\xf3\x7f'
     ;;
 'beepon')
     CMD='\x02\xf3\x00'
@@ -37,7 +42,7 @@ case "$1" in
     CMD=${CMD}$2
     ;;
 *)
-    echo "usage: usblcd [clear | init | reset | lighton | lightoff | beepon | beepoff | text# sometext ]"
+    echo "usage: usblcd [clear | init | reset | lighton | lightoff | beep | beepon | beepoff | text# 'some text']"
     exit
     ;;
 esac
@@ -47,5 +52,6 @@ esac
 #hexdump -C paddedFile.bin
 #cat /dev/usb-bat | hexdump -C
 
-/bin/echo -en "\x01${CMD}" | dd ibs=64 conv=sync of=/dev/usb-bat
+/bin/echo -en "\x01${CMD}" | dd ibs=64 conv=sync status=noxfer of=/dev/usb-bat > /dev/null 2>&1
+
 
