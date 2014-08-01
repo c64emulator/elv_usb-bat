@@ -106,7 +106,7 @@ input: cat /dev/hidraw0 | hexdump -C
 # USB-BAT for LCDproc
 
 ## DEB:  
- * must-have  
+ * must-have:  
 apt-get install libusb-0.1-4 libusb-dev  
  * if you use freetype2 and TTF-fonts (monospace needed):  
 apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
@@ -164,7 +164,7 @@ clients/lcdexec/lcdexec -c lcdexec.conf
 root@hal:/usr/local/sbin# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd.so .  
 root@hal:/usr/local/sbin# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd-glcd-usbbat.o .  
 * initscripts:  
-cp scripts/init-LCDd.debian /etc/init.d/LCDd 
+cp scripts/init-LCDd.debian /etc/init.d/LCDd  
 cp scripts/init-lcdproc.debian /etc/init.d/lcdproc  
 cp scripts/init-lcdexec.debian /etc/init.d/lcdexec   
 chmod a+x /etc/init.d/lcd*  
