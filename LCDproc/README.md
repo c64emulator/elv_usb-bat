@@ -38,8 +38,8 @@ and the attributes from one single parent device.
     KERNELS=="3-1.2:1.0"  
     SUBSYSTEMS=="usb"  
     DRIVERS=="usbhid"  
-    ATTRS{bInterfaceClass}=="03"		<===== means HID-Device  
-    ATTRS{bInterfaceSubClass}=="00"	<===== means no Boot Interface Subclass  
+    ATTRS{bInterfaceClass}=="03"			<===== means HID-Device  
+    ATTRS{bInterfaceSubClass}=="00"		<===== means no Boot Interface Subclass  
     ATTRS{bInterfaceProtocol}=="00"  
     ATTRS{bNumEndpoints}=="02"  
     ATTRS{supports_autosuspend}=="1"  
@@ -54,7 +54,7 @@ and the attributes from one single parent device.
     ATTRS{bDeviceProtocol}=="00"  
     ATTRS{devpath}=="1.2"  
     ATTRS{idVendor}=="18ef"  
-    ATTRS{speed}=="12"							<===== means Full Speed - 12Mbits/s  
+    ATTRS{speed}=="12"									<===== means Full Speed - 12Mbits/s  
     ATTRS{bNumInterfaces}==" 1"  
     ATTRS{bConfigurationValue}=="1"  
     ATTRS{bMaxPacketSize0}=="64"  
@@ -63,7 +63,7 @@ and the attributes from one single parent device.
     ATTRS{configuration}==""  
     ATTRS{bMaxPower}=="64mA"  
     ATTRS{authorized}=="1"  
-    ATTRS{bmAttributes}=="80" 
+    ATTRS{bmAttributes}=="80"  
     ATTRS{bNumConfigurations}=="1"  
     ATTRS{maxchild}=="0"  
     ATTRS{bcdDevice}=="0000"  
