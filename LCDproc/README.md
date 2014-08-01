@@ -1,16 +1,16 @@
 ##USB-BAT on UNIX/LINUX/DEBIAN  
-
-USB Speeds
-    High Speed - 480Mbits/s  
-    Full Speed - 12Mbits/s  
-    Low Speed - 1.5Mbits/s  
-
+  
+USB Speeds  
+    * High Speed - 480Mbits/s  
+    * Full Speed - 12Mbits/s  
+    * Low Speed - 1.5Mbits/s  
+  
 * lsusb -v -d  18ef:e01a  
 
 * l /dev/usb/hiddev*  
 * l /dev/hidraw*  
-
-* dmesg:
+  
+* dmesg:  
 usb 1-1.5: new full-speed USB device number 4 using ehci-pci  
 usb 1-1.5: New USB device found, idVendor=18ef, idProduct=e01a  
 usb 1-1.5: New USB device strings: Mfr=1, Product=2, SerialNumber=0  
@@ -105,24 +105,24 @@ input: cat /dev/hidraw0 | hexdump -C
 ==
 ## USB-BAT for LCDproc
 
-* DEB:
- * must-have
-apt-get install libusb-0.1-4 libusb-dev
- * if you use freetype2 and TTF-fonts (monospace needed):
-apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer
-
-* configure
+# DEB:  
+ * must-have  
+apt-get install libusb-0.1-4 libusb-dev  
+ * if you use freetype2 and TTF-fonts (monospace needed):  
+apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
+  
+# configure  
 ./configure --prefix=/usr/local --enable-drivers=glcd
-
-* build
+  
+# build  
 make
 
-* test
+# test  
 server/LCDd -c LCDd.conf  
 clients/lcdproc/lcdproc -c lcdproc.conf  
 clients/lcdexec/lcdexec -c lcdexec.conf  
   
-* Quick Demo of Commands:  
+# Quick Demo of Commands:  
 >> This assumes LCDd is running, bound to IP 127.0.0.1 on port 13666. From the board, type in:  
 >telnet localhost 13666 
 >> after it connects, type in :  
@@ -171,7 +171,7 @@ chmod a+x /etc/init.d/lcd*
 update-rc.d LCDd defaults  
   
   
-Wunschliste:
+# Wunschliste:
 - Seriennummer (bzw. als ID im eeprom abspeicherbar), um mehrere USB-BAT eindeutig unterscheiden zu können
 - Kontrast des Displays und Helligkeit der Beleuchtung per Soft-Befehl einstellbar
 - SMD-Bauteile nicht so nah an den Lötstellen/Pads für die Selbstbestückung
