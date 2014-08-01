@@ -1,9 +1,9 @@
 # USB-BAT on UNIX/LINUX/DEBIAN  
   
-USB Speeds  
- * High Speed - 480Mbits/s  
- * Full Speed - 12Mbits/s  
- * Low Speed - 1.5Mbits/s  
+* USB Speeds  
+  * High Speed - 480Mbits/s  
+  * Full Speed - 12Mbits/s  
+  * Low Speed - 1.5Mbits/s  
   
 * lsusb -v -d  18ef:e01a  
 
@@ -11,12 +11,12 @@ USB Speeds
 * l /dev/hidraw*  
   
 * dmesg:  
-usb 1-1.5: new full-speed USB device number 4 using ehci-pci  
-usb 1-1.5: New USB device found, idVendor=18ef, idProduct=e01a  
-usb 1-1.5: New USB device strings: Mfr=1, Product=2, SerialNumber=0  
-usb 1-1.5: Product: Bedien-Anzeige-Terminal USB-BAT  
-usb 1-1.5: Manufacturer: ELV Elektronik AG  
-hid-generic 0003:18EF:E01A.0005: hiddev0,hidraw2: USB HID v1.01 Device [ELV Elektronik AG Bedien-Anzeige-Terminal USB-BAT] on usb-0000:00:1a.0-1.5/input0  
+>usb 1-1.5: new full-speed USB device number 4 using ehci-pci  
+>usb 1-1.5: New USB device found, idVendor=18ef, idProduct=e01a  
+>usb 1-1.5: New USB device strings: Mfr=1, Product=2, SerialNumber=0  
+>usb 1-1.5: Product: Bedien-Anzeige-Terminal USB-BAT  
+>usb 1-1.5: Manufacturer: ELV Elektronik AG  
+>hid-generic 0003:18EF:E01A.0005: hiddev0,hidraw2: USB HID v1.01 Device [ELV Elektronik AG Bedien-Anzeige-Terminal USB-BAT] on usb-0000:00:1a.0-1.5/input0  
 
 * udevadm info --attribute-walk -p /sys/class/usbmisc/hiddev1  
  oder udevadm info -a --name /dev/usb/hiddev1  
