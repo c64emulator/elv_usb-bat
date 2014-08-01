@@ -1,9 +1,9 @@
-##USB-BAT on UNIX/LINUX/DEBIAN  
+# USB-BAT on UNIX/LINUX/DEBIAN  
   
 USB Speeds  
-    * High Speed - 480Mbits/s  
-    * Full Speed - 12Mbits/s  
-    * Low Speed - 1.5Mbits/s  
+ * High Speed - 480Mbits/s  
+ * Full Speed - 12Mbits/s  
+ * Low Speed - 1.5Mbits/s  
   
 * lsusb -v -d  18ef:e01a  
 
@@ -103,26 +103,26 @@ input: cat /dev/hidraw0 | hexdump -C
  
 
 ==
-## USB-BAT for LCDproc
+# USB-BAT for LCDproc
 
-# DEB:  
+## DEB:  
  * must-have  
 apt-get install libusb-0.1-4 libusb-dev  
  * if you use freetype2 and TTF-fonts (monospace needed):  
 apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
   
-# configure  
+## configure  
 ./configure --prefix=/usr/local --enable-drivers=glcd
   
-# build  
+## build  
 make
 
-# test  
+## test  
 server/LCDd -c LCDd.conf  
 clients/lcdproc/lcdproc -c lcdproc.conf  
 clients/lcdexec/lcdexec -c lcdexec.conf  
   
-# Quick Demo of Commands:  
+## Quick Demo of Commands:  
 >> This assumes LCDd is running, bound to IP 127.0.0.1 on port 13666. From the board, type in:  
 >telnet localhost 13666 
 >> after it connects, type in :  
@@ -158,7 +158,7 @@ clients/lcdexec/lcdexec -c lcdexec.conf
 >”  
 >quit  
 
-# installation  
+## installation  
 * make install  
 * modules:  
 root@hal:/usr/local/sbin# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd.so .  
@@ -171,7 +171,7 @@ chmod a+x /etc/init.d/lcd*
 update-rc.d LCDd defaults  
   
   
-# Wunschliste:
+## Wunschliste:
 - Seriennummer (bzw. als ID im eeprom abspeicherbar), um mehrere USB-BAT eindeutig unterscheiden zu können
 - Kontrast des Displays und Helligkeit der Beleuchtung per Soft-Befehl einstellbar
 - SMD-Bauteile nicht so nah an den Lötstellen/Pads für die Selbstbestückung
