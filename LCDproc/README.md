@@ -169,6 +169,8 @@ cp scripts/init-lcdproc.debian /etc/init.d/lcdproc
 cp scripts/init-lcdexec.debian /etc/init.d/lcdexec   
 chmod a+x /etc/init.d/lcd*  
 update-rc.d LCDd defaults  
+update-rc.d lcdproc defaults  
+update-rc.d lcdexec defaults  
   
   
 ## Wunschliste:
