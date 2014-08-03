@@ -1,5 +1,3 @@
-  
-
 # USB-BAT for LCDproc
 
 ## DEB:  
