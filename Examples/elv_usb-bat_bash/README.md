@@ -80,8 +80,8 @@
  
  
 *  test  
- 				udevadm monitor  
- 				udevadm test /class/usbmisc/hiddev1  
+ 				> udevadm monitor  
+ 				> udevadm test /class/usbmisc/hiddev1  
        
 
 *  adding udev-rule which makes a symlink "/dev/usb-bat" to hidraw device "/dev/hidraw?"  
@@ -97,4 +97,4 @@
 
 
 *  sending short text message to line 2 of display  
-         usblcd text2 '    hello world!    '  
+         > usblcd text2 '    hello world!    '  
