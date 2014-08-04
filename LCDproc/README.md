@@ -13,7 +13,7 @@ apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer
   
 ## build  
 make  
-	###Note:  added compilerflag "-std=c99". This will produce errors during compilation of other drivers (usleep)!
+### Note:  added compilerflag "-std=c99". This will produce errors during compilation of other drivers (usleep)!
 
 ## test  
 server/LCDd -c LCDd.conf  
