@@ -1,0 +1,45 @@
+#!/bin/bash
+##
+## send byte characters to the display in order to show the display font
+##
+
+
+##**** function sendCMD()
+sendCMD()
+{
+    /bin/echo -en "\x01${CMD}" | dd ibs=64 conv=sync status=noxfer of=/dev/usb-bat > /dev/null 2>&1
+}
+
+
+##**** main()
+CMD='\x02\xf1\x00' # backlight on
+sendCMD
+
+for (( page = 0 ; page < 4 ; page++ )) 
+	do
+		CMD='\x01\xd9'  # clear display
+		sendCMD
+		sleep 1
+
+		for(( line = 0 ; line < 4 ; line++ )) # 4 lines per page
+			do
+				CMD="\x18\xd8\x${line}0\x00"
+				for(( xpos = 1 ; xpos <= 20 ; xpos++ )) #20 characters per line
+ 					do
+						(( char = ${page}*80 + ${line}*20 + ${xpos} )) 
+						if (( char <= 255 ))
+							then
+ 					  		#echo "xpos: ${xpos}, line: ${line}, page: ${page}, char: ${char}" 
+							printf -v hexval '%x' ${char}
+ 					   		CMD=${CMD}"\x${hexval}"
+ 					   		#echo ${CMD}
+							fi
+					done
+ 					echo "printing line: ${line}, page: ${page}, char: ${char}" 
+					#echo "line-cmd: ${CMD}"
+					sendCMD
+					sleep 1
+ 			done
+ 			read -n 1 -p "weiter mit beliebiger Taste... "
+ 	done
+
