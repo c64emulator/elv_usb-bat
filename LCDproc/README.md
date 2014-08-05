@@ -13,7 +13,7 @@ apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer
   
 ## build  
 make  
-#### Note:  added compilerflag "-std=c99". This will produce errors during compilation of other drivers (usleep)!
+##### Note:  added compilerflag "-std=c99". This will produce errors during compilation of other drivers (usleep)!
 
 ## test  
 server/LCDd -c LCDd.conf  
@@ -21,24 +21,25 @@ clients/lcdproc/lcdproc -c clients/lcdproc/lcdproc.conf
 clients/lcdexec/lcdexec -c clients/lcdexec/lcdexec.conf  
   
 ## Quick Demo of Commands:  
->> This assumes LCDd is running, bound to IP 127.0.0.1 on port 13666. From the board, type in:  
->telnet localhost 13666 
->> after it connects, type in :  
->hello  
->> you should receive: connect LCDproc 0.5.7 protocol 0.3 lcd wid 20 hgt 4 cellwid 6 cellhgt 8  
-  
->> Type in the following:  
->backlight flash  
->> View the LCD   
->backlight blink  
->> View the LCD  
->backlight on  
->> View the LCD  
->backlight off  
->> View the LCD  
->backlight on  
->> View the LCD  
-
+```  
+## This assumes LCDd is running, bound to IP 127.0.0.1 on port 13666. From the board, type in:  
+telnet localhost 13666 
+## after it connects, type in :  
+hello  
+## you should receive: connect LCDproc 0.5.7 protocol 0.3 lcd wid 20 hgt 4 cellwid 6 cellhgt 8  
+ 
+## Type in the following:  
+backlight flash  
+## View the LCD   
+backlight blink  
+## View the LCD  
+backlight on  
+## View the LCD  
+backlight off  
+## View the LCD  
+backlight on  
+## View the LCD  
+```  
   
 >> now let's get serious, type in the following:   
 ```
