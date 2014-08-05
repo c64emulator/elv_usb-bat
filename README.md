@@ -16,7 +16,7 @@ All about the Bedien-Anzeige-Terminal from ELV.de (USB-BAT, order# 92448)
 ##see more info at the wiki!  
   
 ##Meine Wunschliste für USB-BAT v2.0:
-   *  Seriennummer (bzw. als ID einem device-eeprom abspeicherbar), um mehrere USB-BAT eindeutig unterscheiden zu können
+   *  Seriennummer (bzw. als ID in einem device-eeprom abspeicherbar), um mehrere USB-BAT eindeutig unterscheiden zu können
    *  custom character in einem eeprom des devices abspeicherbar
    *  Der Zeichensatz des USB-BAT sollte um Icons und Bar-Graph-Extensions erweitert werden, ähnlich wie unter <http://mmdolze.users.sourceforge.net/lcdproc-fonts.html> zu sehen ist.
    *  Kontrast des Displays und Helligkeit der Beleuchtung per Soft-Befehl einstellbar
