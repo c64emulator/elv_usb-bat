@@ -2,7 +2,7 @@
   
 *  available Speeds with USB 2.0  
   * High Speed - 480Mbits/s  
-  * Full Speed - 12Mbits/s       <=====  USB-BAT
+  * Full Speed - 12Mbits/s       <=====  USB-BAT  
   * Low Speed - 1.5Mbits/s  
   
   

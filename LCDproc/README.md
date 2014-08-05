@@ -2,23 +2,33 @@
 
 ## DEB:  
  * must-have:  
-apt-get install libusb-0.1-4 libusb-dev  
+        > apt-get install libusb-0.1-4 libusb-dev  
  * if you use freetype2 and TTF-fonts (monospace needed):  
-apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
+        > apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
 
 ## get LCDproc v0.5.7
+    1) download from <http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/>
+    2) unpack in /usr/local/src/LDCproc (tar -xvzf lcdproc-0.5.7.tar.gz)
   
 ## configure  
-./configure --prefix=/usr/local --enable-drivers=glcd
+        > ./configure --prefix=/usr/local --enable-drivers=glcd --enable_libusb
+
+##### Note: Enabling the debug() function only in specific files:  
+    1) Configure without enabling debug (that is without --enable-debug).  
+    2) Edit the source file that you want to debug and put the following line at the top, before the #include "report.h" line: #define DEBUG.  
+    3) Then recompile with 'make'.  
+    This way, the global DEBUG macro is off but is locally enabled in certain parts of the software.  
+
+## add/merge my files from github to LCDproc
   
 ## build  
-make  
+        > make  
 ##### Note:  added compilerflag "-std=c99". This will produce errors during compilation of other drivers (usleep)!
 
 ## test  
-server/LCDd -c LCDd.conf  
-clients/lcdproc/lcdproc -c clients/lcdproc/lcdproc.conf  
-clients/lcdexec/lcdexec -c clients/lcdexec/lcdexec.conf  
+        > server/LCDd -c LCDd.conf  
+        > clients/lcdproc/lcdproc -c clients/lcdproc/lcdproc.conf  
+        > clients/lcdexec/lcdexec -c clients/lcdexec/lcdexec.conf  
   
 ## Quick Demo of Commands:  
 ```  
@@ -55,24 +65,25 @@ widget_add myscreen scrolling scroller
 widget_set myscreen scrolling 7 1 14 1 v 5 "1234567890abcd"  
 ## View the LCD  
 widget_set myscreen scrolling 7 1 14 1 m 3 "  Welcome...I Hope you have a pleasant day! :)  "  
-## View the LCD and quit your telnet session  
+## View the LCD
+## Quit your telnet session  
 ”  
 quit  
 ```
 
 
 ## installation  
-* make install  
+        > make install  
 * modules:  
-root@hal:/usr/local/sbin# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd.so .  
-root@hal:/usr/local/sbin# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd-glcd-usbbat.o .  
+    root@hal:/usr/local/lib/lcdproc# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd.so .  
+    root@hal:/usr/local/lib/lcdproc# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd-glcd-usbbat.o .  
 * initscripts:  
-cp scripts/init-LCDd.debian /etc/init.d/LCDd  
-cp scripts/init-lcdproc.debian /etc/init.d/lcdproc  
-cp scripts/init-lcdexec.debian /etc/init.d/lcdexec   
-chmod a+x /etc/init.d/lcd*  
-update-rc.d LCDd defaults  
-update-rc.d lcdproc defaults  
-update-rc.d lcdexec defaults  
+    cp scripts/init-LCDd.debian /etc/init.d/LCDd  
+    cp scripts/init-lcdproc.debian /etc/init.d/lcdproc  
+    cp scripts/init-lcdexec.debian /etc/init.d/lcdexec   
+    chmod u+x /etc/init.d/lcd*  
+    update-rc.d LCDd defaults  
+    update-rc.d lcdproc defaults  
+    update-rc.d lcdexec defaults  
 
 #### Note: CPU-use is between 1.5% and 2% (at least on my XEON E3-1220L V2 @ 2.30GHz). Energysaving will suffer from polling the device.
