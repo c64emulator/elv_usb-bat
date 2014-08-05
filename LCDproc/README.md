@@ -47,14 +47,14 @@ screen_add myscreen
 screen_set myscreen -duration 10 -priority 2  
 widget_add myscreen simplewidget string  
 widget_set myscreen simplewidget 1 1 "Testing 1 2 3 !"  
->> View the LCD  
+## View the LCD  
 widget_set myscreen simplewidget 1 2 "Testing 1 2 3 !"  
->> View the LCD  
+## View the LCD  
 widget_add myscreen scrolling scroller  
 widget_set myscreen scrolling 7 1 14 1 v 5 "1234567890abcd"  
->> View the LCD  
+## View the LCD  
 widget_set myscreen scrolling 7 1 14 1 m 3 "  Welcome...I Hope you have a pleasant day! :)  "  
->> View the LCD and quit your telnet session  
+## View the LCD and quit your telnet session  
 ”  
 quit  
 ```
