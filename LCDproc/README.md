@@ -41,7 +41,7 @@ backlight on
 ## View the LCD  
 ```  
   
->> now let's get serious, type in the following:   
+now let's get serious, type in the following:   
 ```
 client_set -name Example  
 screen_add myscreen  
