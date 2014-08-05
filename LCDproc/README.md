@@ -6,7 +6,7 @@
  * if you use freetype2 and TTF-fonts (monospace needed):  
         > apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
 
-## get LCDproc v0.5.7
+## get LCDproc v0.5.7  
     1) download from <http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/>
     2) unpack in /usr/local/src/LDCproc (tar -xvzf lcdproc-0.5.7.tar.gz)
   
@@ -74,12 +74,12 @@ quit
 ## installation  
         > make install  
 * modules:  
-```Shell
+```sh
 root@hal:/usr/local/lib/lcdproc# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd.so .  
 root@hal:/usr/local/lib/lcdproc# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd-glcd-usbbat.o .  
 ```
 * initscripts:  
-```Shell
+```sh
 cp scripts/init-LCDd.debian /etc/init.d/LCDd  
 cp scripts/init-lcdproc.debian /etc/init.d/lcdproc  
 cp scripts/init-lcdexec.debian /etc/init.d/lcdexec   
