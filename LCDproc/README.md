@@ -69,3 +69,5 @@ chmod a+x /etc/init.d/lcd*
 update-rc.d LCDd defaults  
 update-rc.d lcdproc defaults  
 update-rc.d lcdexec defaults  
+
+#### Note: CPU-use is between 1.5% and 2% (at least on my XEON E3-1220L V2 @ 2.30GHz). Energysaving will suffer from polling the device.
