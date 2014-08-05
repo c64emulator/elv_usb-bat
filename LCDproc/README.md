@@ -17,8 +17,8 @@ make
 
 ## test  
 server/LCDd -c LCDd.conf  
-clients/lcdproc/lcdproc -c lcdproc.conf  
-clients/lcdexec/lcdexec -c lcdexec.conf  
+clients/lcdproc/lcdproc -c clients/lcdproc/lcdproc.conf  
+clients/lcdexec/lcdexec -c clients/lcdexec/lcdexec.conf  
   
 ## Quick Demo of Commands:  
 >> This assumes LCDd is running, bound to IP 127.0.0.1 on port 13666. From the board, type in:  
@@ -38,23 +38,27 @@ clients/lcdexec/lcdexec -c lcdexec.conf
 >> View the LCD  
 >backlight on  
 >> View the LCD  
+
   
 >> now let's get serious, type in the following:   
->client_set -name Example  
->screen_add myscreen  
->screen_set myscreen -duration 10 -priority 2  
->widget_add myscreen simplewidget string  
->widget_set myscreen simplewidget 1 1 "Testing 1 2 3 !"  
+```
+client_set -name Example  
+screen_add myscreen  
+screen_set myscreen -duration 10 -priority 2  
+widget_add myscreen simplewidget string  
+widget_set myscreen simplewidget 1 1 "Testing 1 2 3 !"  
 >> View the LCD  
->widget_set myscreen simplewidget 1 2 "Testing 1 2 3 !"  
+widget_set myscreen simplewidget 1 2 "Testing 1 2 3 !"  
 >> View the LCD  
->widget_add myscreen scrolling scroller  
->widget_set myscreen scrolling 7 1 14 1 v 5 "1234567890abcd"  
+widget_add myscreen scrolling scroller  
+widget_set myscreen scrolling 7 1 14 1 v 5 "1234567890abcd"  
 >> View the LCD  
->widget_set myscreen scrolling 7 1 14 1 m 3 "  Welcome...I Hope you have a pleasant day! :)  "  
+widget_set myscreen scrolling 7 1 14 1 m 3 "  Welcome...I Hope you have a pleasant day! :)  "  
 >> View the LCD and quit your telnet session  
->”  
->quit  
+”  
+quit  
+```
+
 
 ## installation  
 * make install  

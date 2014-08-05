@@ -16,15 +16,17 @@ All about the Bedien- und Anzeigeterminal from ELV.de (USB-BAT, order# 92448)
 ##see more info at the wiki!  
   
 ##Meine Wunschliste für USB-BAT v2.0:
-  * Seriennummer (bzw. als ID einem device-eeprom abspeicherbar), um mehrere USB-BAT eindeutig unterscheiden zu können
-  * custom character in einem eeprom des devices abspeicherbar
-  * Kontrast des Displays und Helligkeit der Beleuchtung per Soft-Befehl einstellbar
-  * Toggle-Befehl, um die Beleuchtung umzuschalten
-  * debug modus, in dem die erhaltenen Daten/Kommandos als Hexdump angezeigt werden (64-Byte-Messages: 4 Zeilen à 16 Zeichen)
-  * Buzzer sollte PC-Speaker/Beep-konform sein, dh. verschiedene Tonhöhen/Frequenzen unterstützen
-  * andere Display-Farben(z.B. blau/weiß)
-  * OLED-Display
-  * beleuchtete (dimmbar!) farbige Tasten
-  * SMD-Bauteile nicht so nah an den Lötstellen/Pads für die Selbstbestückung
-  * mit geringem Aufwand in einen 5.25"-Einschub montierbar
-  * Einsatz von Schrauben, die notfalls auch im Baumarkt nachgekauft werden können
+   *  Seriennummer (bzw. als ID einem device-eeprom abspeicherbar), um mehrere USB-BAT eindeutig unterscheiden zu können
+   *  custom character in einem eeprom des devices abspeicherbar
+   *  Der Zeichensatz des USB-BAT sollte um Icons und Bar-Graph-Extensions erweitert werden, ähnlich wie unter <http://mmdolze.users.sourceforge.net/lcdproc-fonts.html> zu sehen ist.
+   *  Kontrast des Displays und Helligkeit der Beleuchtung per Soft-Befehl einstellbar
+   *  Toggle-Befehl, um die Beleuchtung umzuschalten
+   *  debug modus, in dem die erhaltenen Daten/Kommandos als Hexdump angezeigt werden (64-Byte-Messages: 4 Zeilen à 16 Zeichen)
+   *  Buzzer sollte PC-Speaker/Beep-konform sein, dh. verschiedene Tonhöhen/Frequenzen unterstützen
+   *  andere Display-Farben(z.B. blau/weiß)
+   *  OLED-Display
+   *  beleuchtete (dimmbar!) farbige Tasten
+   *  SMD-Bauteile nicht so nah an den Lötstellen/Pads für die Selbstbestückung
+   *  mit geringem Aufwand in einen 5.25"-Einschub montierbar
+   *  Einsatz von Schrauben, die notfalls auch im Baumarkt nachgekauft werden können. Das gilt insbesondere für die Kunststoffschrauben 2.5x12 (Bossard B2.5X12/BN82428)
+      
