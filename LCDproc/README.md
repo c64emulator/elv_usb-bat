@@ -71,19 +71,22 @@ widget_set myscreen scrolling 7 1 14 1 m 3 "  Welcome...I Hope you have a pleasa
 quit  
 ```
 
-
 ## installation  
         > make install  
 * modules:  
-        root@hal:/usr/local/lib/lcdproc# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd.so .  
-        root@hal:/usr/local/lib/lcdproc# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd-glcd-usbbat.o .  
+```Shell
+root@hal:/usr/local/lib/lcdproc# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd.so .  
+root@hal:/usr/local/lib/lcdproc# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd-glcd-usbbat.o .  
+```
 * initscripts:  
-        cp scripts/init-LCDd.debian /etc/init.d/LCDd  
-        cp scripts/init-lcdproc.debian /etc/init.d/lcdproc  
-        cp scripts/init-lcdexec.debian /etc/init.d/lcdexec   
-        chmod u+x /etc/init.d/lcd*  
-        update-rc.d LCDd defaults  
-        update-rc.d lcdproc defaults  
-        update-rc.d lcdexec defaults  
+```Shell
+cp scripts/init-LCDd.debian /etc/init.d/LCDd  
+cp scripts/init-lcdproc.debian /etc/init.d/lcdproc  
+cp scripts/init-lcdexec.debian /etc/init.d/lcdexec   
+chmod u+x /etc/init.d/lcd*  
+update-rc.d LCDd defaults  
+update-rc.d lcdproc defaults  
+update-rc.d lcdexec defaults  
+```
 
 #### Note: CPU-use is between 1.5% and 2% (at least on my XEON E3-1220L V2 @ 2.30GHz). Energysaving will suffer from polling the device.
