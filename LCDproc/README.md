@@ -1,6 +1,6 @@
 # USB-BAT for LCDproc
 
-## DEB:  
+## Prerequisite:  
  * must-have:  
         > apt-get install libusb-0.1-4 libusb-dev  
  * if you use freetype2 and TTF-fonts (monospace needed):  
