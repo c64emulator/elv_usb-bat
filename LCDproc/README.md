@@ -92,8 +92,8 @@ update-rc.d lcdexec defaults
 #### Note: CPU-use is between 1.5% and 2% (at least on my XEON E3-1220L V2 @ 2.30GHz). Energysaving will suffer from polling the device.
 
 ## usage
-         A-Key: switches the backlight on/off  
-         B-Key: menu/esc - start up menu selection, escape menu selection  
+     A-Key: switches the backlight on/off  
+     B-Key: menu/esc - start up menu selection, escape menu selection  
  encoder wheel: up/down  
 encoder button: enter/select  
   
