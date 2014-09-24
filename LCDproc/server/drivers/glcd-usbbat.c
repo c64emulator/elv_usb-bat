@@ -6,6 +6,7 @@
 /*-
  * Copyright (c) 2009 Nicu Pavel <napvel@mini-box.com>
  * Copyright (c) 2012 Scott Meahrg <ssmeharg@gmail.com>
+ * Copyright (c) 2014 c64emulator <john.doe@neverbox.com>
  *
  * This file is released under the GNU General Public License. Refer to the
  * COPYING file distributed with this package.
@@ -29,18 +30,15 @@
 #include <usb.h>
 
 #include "lcd.h"
+#define DEBUG
 #include "report.h"
 #include "glcd-low.h"
 
 #define usbBAT_VENDOR  			0x18ef
 #define usbBAT_DEVICE  			0xe01a
 
-/* report frames */
-
-#define USBBAT_MAX_DATA_LEN_OUT		64
-#define USBBAT_MAX_DATA_LEN_IN	 	8
-
-/*
+/*   Messageframe (Note: outputLen= 64 Byte -- inputLen= 8 Byte)
+*
 *   | HID-Report-ID |  Byte-Count 1) |     CMD-ID     |   CMD/Data 2)  |
 *   +---------------+----------------+----------------+----------------+
 *   |     (out:0x01)|       0x01-0x3E|                | 61 Byte        |
@@ -51,6 +49,9 @@
 *     1) only CMD-ID and Datafields count
 *     2) unused bytes are filled with zeroes (0x00)
 */
+#define USBBAT_MAX_DATA_LEN_OUT		64
+#define USBBAT_MAX_DATA_LEN_IN	 	8
+
 /* USB-BAT Graphics Commands */
 #define USBBAT_REPORTID_OUT		0x01
 #define USBBAT_OUT_BACKLIGHT_ON		0xf1
@@ -67,6 +68,8 @@
 #define USBBAT_WIDTH			122
 #define USBBAT_HEIGHT			32
 #define USBBAT_CONTRLS			2
+
+/* Default for user configurable properties */
 #define USBBAT_DEF_KEYTIMEOUT		125
 #define USBBAT_DEF_INVERTED		0
 
@@ -411,6 +414,10 @@ glcd_usbbat_close(PrivateData *p)
 		p->ct_data = NULL;
 	}
 }
+/**
+ * API: Poll for any pressed keys. Converts the bitmap of keys pressed into a
+ * scancode (1-6) for each pressed key.
+ */
 
 /*
 *	we use keyscan mode 1 (display detects key internal and sends info about pressed key)
@@ -428,10 +435,6 @@ glcd_usbbat_close(PrivateData *p)
 *
 */    
 
-/**
- * API: Poll for any pressed keys. Converts the bitmap of keys pressed into a
- * scancode (1-6) for each pressed key.
- */
 unsigned char
 glcd_usbbat_pollkeys(PrivateData *p)
 {
@@ -461,11 +464,11 @@ glcd_usbbat_pollkeys(PrivateData *p)
 //                				fprintf(stderr, "GLCD/usbbat: *** toggle backlight before: %d\n", ct_data->backlightstate);
 						glcd_usbbat_set_backlight(p, !ct_data->backlightstate);
 //                				fprintf(stderr, "GLCD/usbbat: *** toggle backlight after: %d\n", ct_data->backlightstate);
-						//rv = 7;		/* Menu */
+						//rv = 7;		/* Backlight On/Off */
 						break;
 					case 2:
 //                				fprintf(stderr, "GLCD/usbbat: *** key press detected: B-key (Escape button) ***\n");
-						rv = 6;		/* Escape */
+						rv = 6;		/* Menu/Escape */
 						break;
 				}		
 			}	
