@@ -477,11 +477,11 @@ glcd_usbbat_pollkeys(PrivateData *p)
 		// check if encoder wheel was turned
 		if (rx_packet[5] == 0xff) {
 //			fprintf(stderr, "GLCD/usbbat: *** key press detected: wheel left (Down button) ***\n");
-                        rv = 1;		/* up */
+                        rv = 2;		/* down */
                 }
 		else if (rx_packet[5] == 0x01) {
 //			fprintf(stderr, "GLCD/usbbat: *** key press detected: wheel right (Up button) ***\n");
-			 rv = 2;	/* down */
+			 rv = 1;	/* up */
 		}
 	} 
 	else rv = -1;
