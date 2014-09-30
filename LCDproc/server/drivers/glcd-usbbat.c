@@ -139,7 +139,7 @@ usbbat_write(usb_dev_handle * lcd, unsigned char *data)
 	fprintf(stderr, "GLCD/usbbat: sending data: ");
 	for (int i = 0; i < USBBAT_MAX_DATA_LEN_OUT; i ++) fprintf(stderr, " 0x%02x", data[i]);
 	fprintf(stderr, "\n");
-*/ 
+*/
 	bytesSent = usb_interrupt_write(lcd, USB_ENDPOINT_OUT + 1, (char *) data, USBBAT_MAX_DATA_LEN_OUT, 1000);
 
 	if (bytesSent != USBBAT_MAX_DATA_LEN_OUT) {
@@ -165,7 +165,7 @@ usbbat_clearPage(usb_dev_handle * lcd, int pg)
 
         cmd[0] = USBBAT_REPORTID_OUT;
         cmd[1] = 0x02;					// cmdlen = 2 byte (cmd & page)
-        cmd[2] = 0xDA;					// cmd 
+        cmd[2] = 0xDA;					// cmd
         cmd[3] = pg;					// page number
 
  	usbbat_write(lcd, cmd);
@@ -304,7 +304,7 @@ glcd_usbbat_init(Driver *drvthis)
 				cmd[2] = USBBAT_OUT_KEY_POLL_MODE;
 				cmd[3] = USBBAT_OUT_KEY_POLL_MODE_STD;
 				cmd[4] = 0x00;
-				
+
  				usbbat_write(ct_data->lcd, cmd);
 
 				debug(RPT_DEBUG, "GLCD/usbbat: init() done");
@@ -331,7 +331,7 @@ glcd_usbbat_init(Driver *drvthis)
 *
 * The display can be updated at a tile granularity.
 *
-*         Chip 1           Chip 2        
+*         Chip 1           Chip 2
 *   |0     E0      60|61    E1     121|
 * --+----------------+----------------+
 *  0|                |                |
@@ -383,7 +383,7 @@ glcd_usbbat_blit(PrivateData *p)
 			}
 
          		if (blank)
-                       		usbbat_clearPage(ct_data->lcd, page); 
+                       		usbbat_clearPage(ct_data->lcd, page);
                 	else
                         	usbbat_write(ct_data->lcd, cmd);
 		}
@@ -392,7 +392,7 @@ glcd_usbbat_blit(PrivateData *p)
 
 	memcpy(ct_data->backingstore, p->framebuf.data, p->framebuf.size);
 }
- 
+
 /**
  * API: Release low-level resources.
  */
@@ -433,7 +433,7 @@ glcd_usbbat_close(PrivateData *p)
 * By default the keys are assigned as follows:
 *   1: Up, 2: Down, 3: Left, 4: Right, 5: Enter, 6: Escape.
 *
-*/    
+*/
 
 unsigned char
 glcd_usbbat_pollkeys(PrivateData *p)
@@ -453,7 +453,7 @@ glcd_usbbat_pollkeys(PrivateData *p)
 */
 		for (i = 0; i < 3; i++) { //check if button pressed
 			if (rx_packet[3] & (1 << i)) {
-	
+
 				switch (i) {	// note: only one/first key is detected
 					case 0:
 //                				fprintf(stderr, "GLCD/usbbat: *** key press detected: wheel button (enter button) ***\n");
@@ -470,10 +470,10 @@ glcd_usbbat_pollkeys(PrivateData *p)
 //                				fprintf(stderr, "GLCD/usbbat: *** key press detected: B-key (Escape button) ***\n");
 						rv = 6;		/* Menu/Escape */
 						break;
-				}		
-			}	
+				}
+			}
 		}
-	
+
 		// check if encoder wheel was turned
 		if (rx_packet[5] == 0xff) {
 //			fprintf(stderr, "GLCD/usbbat: *** key press detected: wheel left (Down button) ***\n");
@@ -483,7 +483,7 @@ glcd_usbbat_pollkeys(PrivateData *p)
 //			fprintf(stderr, "GLCD/usbbat: *** key press detected: wheel right (Up button) ***\n");
 			 rv = 1;	/* up */
 		}
-	} 
+	}
 	else rv = -1;
 //	fprintf(stderr, "GLCD/usbbat: PollKey return: %d\n", rv);
 	return rv;
@@ -498,7 +498,7 @@ glcd_usbbat_set_backlight(PrivateData *p, int state)
 {
 
 //	fprintf(stderr, "GLCD/usbbat: set backlight to %d\n", state);
-	
+
 	CT_usbbat_data *ct_data = (CT_usbbat_data *) p->ct_data;
 	unsigned char cmd[USBBAT_MAX_DATA_LEN_OUT];
 
