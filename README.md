@@ -21,6 +21,7 @@ All about the Bedien-Anzeige-Terminal from ELV.de (USB-BAT, order# 92448)
    *  Der Zeichensatz des USB-BAT sollte um Icons und Bar-Graph-Extensions erweitert werden, ähnlich wie unter <http://mmdolze.users.sourceforge.net/lcdproc-fonts.html> zu sehen ist.
    *  Kontrast des Displays und Helligkeit der Beleuchtung per Soft-Befehl einstellbar
    *  Toggle-Befehl, um die Beleuchtung umzuschalten
+   *  Energie-Spar-Modus (momentan: mit Beleuchtung: 420mW, ohne Beleuchtung: 113mW)
    *  debug modus, in dem die erhaltenen Daten/Kommandos als Hexdump angezeigt werden (64-Byte-Messages: 4 Zeilen à 16 Zeichen)
    *  Buzzer sollte PC-Speaker/Beep-konform sein, dh. verschiedene Tonhöhen/Frequenzen unterstützen
    *  andere Display-Farben(z.B. blau/weiß)
