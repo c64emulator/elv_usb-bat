@@ -2,18 +2,20 @@
 
 ## Prerequisite:  
  * must-have:  
-        > apt-get install libusb-0.1-4 libusb-dev  
+        > apt-get install build-essential automake autoconf gawk pkg-config libx11-dev libusb-0.1-4 libusb-dev  
  * if you use freetype2 and TTF-fonts (monospace needed):  
         > apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
 
 ## get LCDproc v0.5.7  
     1) download from <http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/>
-    2) unpack in /usr/local/src/LDCproc (tar -xvzf lcdproc-0.5.7.tar.gz)
+    2) unpack in /usr/local/src/LCDproc (tar -xvzf lcdproc-0.5.7.tar.gz)
     
 ## copy my files from github to LCDproc
-  
+ 
 ## configure
-        > ./configure --prefix=/usr/local --enable-drivers=glcd --enable-libusb
+        > autoreconf -v
+        > ./configure --disable-libftdi --disable-libhid --disable-libX11 --disable-libusb-1-0 --disable-ethlcd --disable-freetype --disable-libpng --prefix=/usr/local --enable-drivers=glcd --enable-libusb
+
 
 ##### Note: Enabling the debug() function only in specific files:  
     1) Configure without enabling debug (that is without --enable-debug).  
@@ -28,8 +30,11 @@
 
 ## test  
         > server/LCDd -c LCDd.conf  
-        > clients/lcdproc/lcdproc -c clients/lcdproc/lcdproc.conf  
+        ==> the display is showing the status screen of LCDproc
+        > clients/lcdproc/lcdproc -c clients/lcdproc/lcdproc.conf 
+        ==> the display is showing some infos about the machine running on
         > clients/lcdexec/lcdexec -c clients/lcdexec/lcdexec.conf  
+        ==> custom menu is available
   
 ## Quick Demo of Commands:  
 ```  
@@ -67,23 +72,23 @@ widget_set myscreen scrolling 7 1 14 1 v 5 "1234567890abcd"
 ## View the LCD  
 widget_set myscreen scrolling 7 1 14 1 m 3 "  Welcome...I Hope you have a pleasant day! :)  "  
 ## View the LCD
-## Quit your telnet session  
+## Quit your telnet session (hex value 0x94)  
 ”  
 quit  
 ```
 
 ## installation  
         > make install  
-* modules:  
+* missing modules in lib-dir (sorry, makefile is buggy):  
 ```sh
-root@hal:/usr/local/lib/lcdproc# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd.so .  
-root@hal:/usr/local/lib/lcdproc# cp ../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd-glcd-usbbat.o .  
+root@hal:/usr/local/lib/lcdproc# cp ../../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd-glcd-usbbat.o .  
 ```
-* initscripts:  
+* initscripts (note: consider the dependencies, LCDd has to be started as first process):  
 ```sh
 cp scripts/init-LCDd.debian /etc/init.d/LCDd  
 cp scripts/init-lcdproc.debian /etc/init.d/lcdproc  
-cp scripts/init-lcdexec.debian /etc/init.d/lcdexec   
+cp scripts/init-lcdexec.debian /etc/init.d/lcdexec
+chmod u+x /etc/init.d/LCD*   
 chmod u+x /etc/init.d/lcd*  
 update-rc.d LCDd defaults  
 update-rc.d lcdproc defaults  
@@ -97,5 +102,3 @@ update-rc.d lcdexec defaults
     B-Key: menu/esc - start up menu selection, escape menu selection  
     encoder wheel: up/down  
     encoder button: enter/select  
-  
-  
