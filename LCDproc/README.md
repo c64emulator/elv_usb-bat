@@ -8,7 +8,7 @@
 
 ## get LCDproc v0.5.7  
     1) download from <http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/>
-    2) unpack (tar -xvzf lcdproc-0.5.7.tar.gz)
+    2) unpack in /usr/local/src/LDCproc (tar -xvzf lcdproc-0.5.7.tar.gz)
     
 ## copy my files from github to LCDproc
   
@@ -95,7 +95,7 @@ update-rc.d lcdexec defaults
 ## usage  
     A-Key: switches the backlight on/off  
     B-Key: menu/esc - start up menu selection, escape menu selection  
- encoder wheel: up/down  
- encoder button: enter/select  
+    encoder wheel: up/down  
+    encoder button: enter/select  
   
   
