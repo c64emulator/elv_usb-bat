@@ -8,10 +8,12 @@
 
 ## get LCDproc v0.5.7  
     1) download from <http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/>
-    2) unpack in /usr/local/src/LDCproc (tar -xvzf lcdproc-0.5.7.tar.gz)
+    2) unpack (tar -xvzf lcdproc-0.5.7.tar.gz)
+    
+## copy my files from github to LCDproc
   
-## configure  
-        > ./configure --prefix=/usr/local --enable-drivers=glcd --enable_libusb
+## configure
+        > ./configure --prefix=/usr/local --enable-drivers=glcd --enable-libusb
 
 ##### Note: Enabling the debug() function only in specific files:  
     1) Configure without enabling debug (that is without --enable-debug).  
@@ -19,8 +21,7 @@
     3) Then recompile with 'make'.  
     This way, the global DEBUG macro is off but is locally enabled in certain parts of the software.  
 
-## add/merge my files from github to LCDproc
-  
+
 ## build  
         > make  
 ##### Note:  added compilerflag "-std=c99". This will produce errors during compilation of other drivers (usleep)!
@@ -67,7 +68,7 @@ widget_set myscreen scrolling 7 1 14 1 v 5 "1234567890abcd"
 widget_set myscreen scrolling 7 1 14 1 m 3 "  Welcome...I Hope you have a pleasant day! :)  "  
 ## View the LCD
 ## Quit your telnet session  
-î  
+‚Äù  
 quit  
 ```
 
@@ -95,6 +96,6 @@ update-rc.d lcdexec defaults
     A-Key: switches the backlight on/off  
     B-Key: menu/esc - start up menu selection, escape menu selection  
  encoder wheel: up/down  
-encoder button: enter/select  
+ encoder button: enter/select  
   
   
