@@ -98,7 +98,8 @@ quit
 ## installation  
         > make install  
 
-* initscripts (note: consider the dependencies, LCDd has to be started before lcdpro and lcdexec)!  
+* initscripts  
+  Note: Consider the dependencies, LCDd has to be started before lcdpro and lcdexec!  
   Therefore I changed a line in the startup scripts of 'lcdproc' and 'lcdexec' provided with lcdproc:  
 ```
   # Required-Start:    LCDd $syslog $local_fs $network $remote_fs
