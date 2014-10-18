@@ -42,13 +42,16 @@
 ##### Note:  added compilerflag "-std=c99". This will produce errors during compilation of other drivers (usleep)!
 
 ## test  
-        > server/LCDd -c LCDd.conf  
+``` 
+> server/LCDd -c LCDd.conf  
             ==> the display is showing the status screen of LCDproc. Note: check if parameter "DriverPath" in the "Server" section is set according to your setup
-        > clients/lcdproc/lcdproc -c clients/lcdproc/lcdproc.conf 
+> clients/lcdproc/lcdproc -c clients/lcdproc/lcdproc.conf 
             ==> the display is showing some infos about the machine running on
-        > clients/lcdexec/lcdexec -c clients/lcdexec/lcdexec.conf  
+> clients/lcdexec/lcdexec -c clients/lcdexec/lcdexec.conf  
             ==> custom menu is available.  
-#### Note: check your config file, when lcdexec throws a critical error
+``` 
+
+#### Note when lcdexec throws a critical error: check your config file 'lcdexec.conf'.  
   
 ## Quick Demo of Commands:  
 ```  
