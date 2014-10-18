@@ -5,7 +5,7 @@
 ``` 
 > apt-get install build-essential automake autoconf gawk gnu-standards pkg-config libusb-0.1-4 libusb-dev  
 ```          
- * if you use freetype2 and TTF-fonts (monospace needed):  
+ * ONLY, if you use freetype2 and TTF-fonts (monospace needed), which I would NOT recommend (buildin font is better to read):  
 ``` 
 > apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
 ``` 
