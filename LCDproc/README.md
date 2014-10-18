@@ -52,8 +52,8 @@
 ``` 
 
 #### Notes:
-      * check if parameter "DriverPath" in the "Server" section of 'LCDd.conf' is set according to your setup
-      * when lcdexec throws a critical error: check your config file 'lcdexec.conf'.  
+ * check if parameter "DriverPath" in the "Server" section of 'LCDd.conf' is set according to your setup
+ * when lcdexec throws a critical error: check your config file 'lcdexec.conf'.  
   
 ## Quick Demo of Commands:  
 ```  
