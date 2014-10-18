@@ -7,8 +7,8 @@
         > apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
 
 ## get LCDproc v0.5.7  
-    1) download from <http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/>  
-    2) unpack in /usr/local/src/LCDproc (tar -xvzf lcdproc-0.5.7.tar.gz)  
+   1) download from <http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/>  
+   2) unpack in /usr/local/src/LCDproc (tar -xvzf lcdproc-0.5.7.tar.gz)  
   
 ## copy my files from github to LCDproc
  
@@ -109,7 +109,7 @@ update-rc.d LCDd defaults
 update-rc.d lcdproc defaults  
 update-rc.d lcdexec defaults  
 ```
-## Make sure that parameter "DriverPath" in the "Server" section of "/usr/local/etc/LCDd.conf" is set according to your setup before firing up the server.
+### Make sure that parameter "DriverPath" in the "Server" section of "/usr/local/etc/LCDd.conf" is set according to your setup before firing up the server.
 
 #### Note: CPU-use is between 1.5% and 2% (at least on my XEON E3-1220L V2 @ 2.30GHz). Energysaving will suffer from polling the device.
 
