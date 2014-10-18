@@ -2,9 +2,9 @@
 
 ## Prerequisite:  
  * must-have:  
-        > apt-get install build-essential automake autoconf gawk gnu-standards pkg-config libusb-0.1-4 libusb-dev  
+         > apt-get install build-essential automake autoconf gawk gnu-standards pkg-config libusb-0.1-4 libusb-dev  
  * if you use freetype2 and TTF-fonts (monospace needed):  
-        > apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
+         > apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
 
 ## get LCDproc v0.5.7  
    1) download from <http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/>  
@@ -28,12 +28,11 @@
 ``` 
 
 ##### Note: Enabling the debug() function only in specific files:  
-    1) Configure without enabling debug (that is without --enable-debug).  
-    2) Edit the source file that you want to debug and put the following line at the top, before the #include "report.h" line: #define DEBUG.  
-    3) Then recompile with 'make'.  
+   1) Configure without enabling debug (that is without --enable-debug).  
+   2) Edit the source file that you want to debug and put the following line at the top, before the #include "report.h" line: #define DEBUG.  
+   3) Then recompile with 'make'.  
     This way, the global DEBUG macro is off but is locally enabled in certain parts of the software.  
-
-
+  
 ## build  
         > make  
 ##### Note:  added compilerflag "-std=c99". This will produce errors during compilation of other drivers (usleep)!
