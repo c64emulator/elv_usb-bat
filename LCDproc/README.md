@@ -2,7 +2,7 @@
 
 ## Prerequisite:  
  * must-have:  
-        > apt-get install build-essential automake autoconf gawk pkg-config libx11-dev libusb-0.1-4 libusb-dev  
+        > apt-get install build-essential automake autoconf gawk gnu-standards pkg-config libusb-0.1-4 libusb-dev  
  * if you use freetype2 and TTF-fonts (monospace needed):  
         > apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
 
@@ -13,9 +13,19 @@
 ## copy my files from github to LCDproc
  
 ## configure
+``` 
         > autoreconf -v
-        > ./configure --disable-libftdi --disable-libhid --disable-libX11 --disable-libusb-1-0 --disable-ethlcd --disable-freetype --disable-libpng --prefix=/usr/local --enable-drivers=glcd --enable-libusb
-
+        > ./configure --disable-libftdi \
+                      --disable-libhid \
+                      --disable-libX11 \
+                      --disable-libusb-1-0 \
+                      --disable-ethlcd \
+                      --disable-freetype \
+                      --disable-libpng \
+                      --prefix=/usr/local \
+                      --enable-drivers=glcd \
+                      --enable-libusb
+``` 
 
 ##### Note: Enabling the debug() function only in specific files:  
     1) Configure without enabling debug (that is without --enable-debug).  
@@ -30,11 +40,11 @@
 
 ## test  
         > server/LCDd -c LCDd.conf  
-        ==> the display is showing the status screen of LCDproc
+            ==> the display is showing the status screen of LCDproc. Note: check if parameter "DriverPath" in the "Server" section is set according to your setup
         > clients/lcdproc/lcdproc -c clients/lcdproc/lcdproc.conf 
-        ==> the display is showing some infos about the machine running on
+            ==> the display is showing some infos about the machine running on
         > clients/lcdexec/lcdexec -c clients/lcdexec/lcdexec.conf  
-        ==> custom menu is available
+            ==> custom menu is available. Note: check your config file, when lcdexec throws a critical error
   
 ## Quick Demo of Commands:  
 ```  
@@ -70,30 +80,36 @@ widget_set myscreen simplewidget 1 2 "Testing 1 2 3 !"
 widget_add myscreen scrolling scroller  
 widget_set myscreen scrolling 7 1 14 1 v 5 "1234567890abcd"  
 ## View the LCD  
-widget_set myscreen scrolling 7 1 14 1 m 3 "  Welcome...I Hope you have a pleasant day! :)  "  
+widget_set myscreen scrolling 7 1 14 1 m 3 "  Welcome...I hope you have a pleasant day! :)  "  
 ## View the LCD
-## Quit your telnet session (hex value 0x94)  
+## Quit your LCDproc session (hex value 0x94)  
 ”  
+## Quit your telnet session 
 quit  
 ```
 
 ## installation  
         > make install  
-* missing modules in lib-dir (sorry, makefile is buggy):  
-```sh
-root@hal:/usr/local/lib/lcdproc# cp ../../src/LCDproc/lcdproc-0.5.7/server/drivers/glcd-glcd-usbbat.o .  
+
+* initscripts (note: consider the dependencies, LCDd has to be started before lcdpro and lcdexec)!  
+  Therefore I changed a line in the startup scripts of 'lcdproc' and 'lcdexec' provided with lcdproc:  
 ```
-* initscripts (note: consider the dependencies, LCDd has to be started as first process):  
+  # Required-Start:    LCDd $syslog $local_fs $network $remote_fs
+```
+
+  copy my scripts (debian):  
+  
 ```sh
 cp scripts/init-LCDd.debian /etc/init.d/LCDd  
-cp scripts/init-lcdproc.debian /etc/init.d/lcdproc  
-cp scripts/init-lcdexec.debian /etc/init.d/lcdexec
+cp scripts/lcdproc.debian.me /etc/init.d/lcdproc  
+cp scripts/lcdexec.debian.me /etc/init.d/lcdexec
 chmod u+x /etc/init.d/LCD*   
 chmod u+x /etc/init.d/lcd*  
 update-rc.d LCDd defaults  
 update-rc.d lcdproc defaults  
 update-rc.d lcdexec defaults  
 ```
+## Make sure that parameter "DriverPath" in the "Server" section of "/usr/local/etc/LCDd.conf" is set according to your setup before firing up the server.
 
 #### Note: CPU-use is between 1.5% and 2% (at least on my XEON E3-1220L V2 @ 2.30GHz). Energysaving will suffer from polling the device.
 
