@@ -7,9 +7,9 @@
         > apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
 
 ## get LCDproc v0.5.7  
-    1) download from <http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/>
-    2) unpack in /usr/local/src/LCDproc (tar -xvzf lcdproc-0.5.7.tar.gz)
-    
+    1) download from <http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/>  
+    2) unpack in /usr/local/src/LCDproc (tar -xvzf lcdproc-0.5.7.tar.gz)  
+  
 ## copy my files from github to LCDproc
  
 ## configure
