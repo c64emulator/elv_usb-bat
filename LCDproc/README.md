@@ -2,9 +2,13 @@
 
 ## Prerequisite:  
  * must-have:  
+ ``` 
          > apt-get install build-essential automake autoconf gawk gnu-standards pkg-config libusb-0.1-4 libusb-dev  
+```          
  * if you use freetype2 and TTF-fonts (monospace needed):  
+``` 
          > apt-get install libfreetype6 libfreetype6-dev ttf-mscorefonts-installer  
+``` 
 
 ## get LCDproc v0.5.7  
    1) download from <http://sourceforge.net/projects/lcdproc/files/lcdproc/0.5.7/>  
@@ -43,7 +47,8 @@
         > clients/lcdproc/lcdproc -c clients/lcdproc/lcdproc.conf 
             ==> the display is showing some infos about the machine running on
         > clients/lcdexec/lcdexec -c clients/lcdexec/lcdexec.conf  
-            ==> custom menu is available. Note: check your config file, when lcdexec throws a critical error
+            ==> custom menu is available.  
+#### Note: check your config file, when lcdexec throws a critical error
   
 ## Quick Demo of Commands:  
 ```  
