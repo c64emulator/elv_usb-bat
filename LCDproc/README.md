@@ -41,7 +41,7 @@
         > make  
 ##### Note:  added compilerflag "-std=c99". This will produce errors during compilation of other drivers (usleep)!
 
-## test (See additional note below!)  
+## test (See additional notes below!)  
 ``` 
 > server/LCDd -c LCDd.conf  
             ==> the display is showing the status screen of LCDproc. See additional note below.
