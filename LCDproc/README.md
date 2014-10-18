@@ -2,7 +2,7 @@
 
 ## Prerequisite:  
  * must-have:  
- ``` 
+``` 
 > apt-get install build-essential automake autoconf gawk gnu-standards pkg-config libusb-0.1-4 libusb-dev  
 ```          
  * if you use freetype2 and TTF-fonts (monospace needed):  
