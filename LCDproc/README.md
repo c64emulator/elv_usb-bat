@@ -18,17 +18,17 @@
  
 ## configure
 ``` 
-        > autoreconf -v
-        > ./configure --disable-libftdi \
-                      --disable-libhid \
-                      --disable-libX11 \
-                      --disable-libusb-1-0 \
-                      --disable-ethlcd \
-                      --disable-freetype \
-                      --disable-libpng \
-                      --prefix=/usr/local \
-                      --enable-drivers=glcd \
-                      --enable-libusb
+> autoreconf -v
+> ./configure --disable-libftdi \
+              --disable-libhid \
+              --disable-libX11 \
+              --disable-libusb-1-0 \
+              --disable-ethlcd \
+              --disable-freetype \
+              --disable-libpng \
+              --prefix=/usr/local \
+              --enable-drivers=glcd \
+              --enable-libusb
 ``` 
 
 ##### Note: Enabling the debug() function only in specific files:  
