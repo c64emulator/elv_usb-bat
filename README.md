@@ -22,8 +22,8 @@ All about the Bedien-Anzeige-Terminal from ELV.de (USB-BAT, order# 92448)
    *  Kontrast des Displays und Helligkeit der Beleuchtung per Soft-Befehl einstellbar
    *  Einschaltdauer der Beleuchtung sollte nicht in 10ms(!) Schritten, sondern in Minuten (0 bis 255 min) konfigurierbar sein
    *  Toggle-Befehl, um die Beleuchtung umzuschalten
-   *  Einschaltdauer der Beleuchtung bei Tastendruck sollte konfigurierbar sein (0 bis 255 sec)
-   *  Energie-Spar-Modus (momentan: mit Beleuchtung: 420mW, ohne Beleuchtung: 113mW)
+   *  Einschaltdauer der Beleuchtung bei Tastendruck (momentan fix auf 5 sec) sollte konfigurierbar sein (0 bis 255 sec)
+   *  Energie-Spar-Modus (momentan: mit Beleuchtung: 420mW, ohne Beleuchtung: 113mW), der per Softbefehlt eingeschaltet und per Knopfdruck deaktiviert werden kann
    *  debug modus, in dem die erhaltenen Daten/Kommandos als Hexdump angezeigt werden (64-Byte-Messages: 4 Zeilen à 16 Zeichen)
    *  Buzzer sollte PC-Speaker/Beep-konform sein, dh. verschiedene Tonhöhen/Frequenzen unterstützen
    *  andere Display-Farben(z.B. blau/weiß)
