@@ -44,14 +44,16 @@
 ## test  
 ``` 
 > server/LCDd -c LCDd.conf  
-            ==> the display is showing the status screen of LCDproc. Note: check if parameter "DriverPath" in the "Server" section is set according to your setup
+            ==> the display is showing the status screen of LCDproc. See additional note below.
 > clients/lcdproc/lcdproc -c clients/lcdproc/lcdproc.conf 
             ==> the display is showing some infos about the machine running on
 > clients/lcdexec/lcdexec -c clients/lcdexec/lcdexec.conf  
-            ==> custom menu is available.  
+            ==> custom menu is available. See additional note below.  
 ``` 
 
-#### Note when lcdexec throws a critical error: check your config file 'lcdexec.conf'.  
+#### Notes:
+      * check if parameter "DriverPath" in the "Server" section is set according to your setup
+      * when lcdexec throws a critical error: check your config file 'lcdexec.conf'.  
   
 ## Quick Demo of Commands:  
 ```  
